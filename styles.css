@@ -1,3 +1,16 @@
 .box {
     border: 0.5px solid black;
 }
+
+.grid {
+    width: 75rem;
+    height: 75rem;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.box.active {
+    background-color: rgb(60, 103, 196);
+}

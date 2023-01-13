@@ -19,3 +19,9 @@ function createGrid(gridSize) {
         }
     }
 }
+
+grid.addEventListener("mouseover", function (e) {
+    if (e.target.matches(".box")) {
+        e.target.classList.add("active");
+    }
+});
