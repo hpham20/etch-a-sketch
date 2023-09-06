@@ -1,5 +1,5 @@
 const grid = document.querySelector(".grid");
-let gridSize = 16;
+let gridSize = prompt("How many squares per side? (Maximum: 100)");
 
 createGrid(gridSize);
 
@@ -13,10 +13,13 @@ function createSquare(size) {
 }
 
 function createGrid(gridSize) {
-    for (let i = 0; i < gridSize; i++) {
-        for (let j = 0; j < gridSize; j++) {
+    gridSize = gridSize || 16;
+
+    grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    
+    for (let i = 0; i < gridSize * gridSize; i++) {
             grid.appendChild(createSquare(grid.clientWidth / gridSize));
-        }
     }
 }
 

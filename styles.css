@@ -3,12 +3,7 @@
 }
 
 .grid {
-    width: 75rem;
-    height: 75rem;
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    display: grid;
 }
 
 .box.active {
