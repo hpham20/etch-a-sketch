@@ -1,5 +1,6 @@
 const grid = document.querySelector(".grid");
 let gridSize = prompt("How many squares per side? (Maximum: 100)");
+let color = "black"
 
 createGrid(gridSize);
 
@@ -15,8 +16,10 @@ function createSquare(size) {
 function createGrid(gridSize) {
     gridSize = gridSize || 16;
 
-    grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    const columnWidth = `${100 / gridSize}%`
+
+    grid.style.gridTemplateColumns = `repeat(${gridSize}, ${columnWidth})`;
+    grid.style.gridTemplateRows = `repeat(${gridSize}, ${columnWidth})`;
     
     for (let i = 0; i < gridSize * gridSize; i++) {
             grid.appendChild(createSquare(grid.clientWidth / gridSize));
@@ -28,3 +31,16 @@ grid.addEventListener("mouseover", function (e) {
         e.target.classList.add("active");
     }
 });
+
+function clearCanvas() {
+    let squares = document.getElementsByClassName("box")
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].classList.remove("active")
+    }
+}
+
+/*
+TODO:
+- Slider to adjust canvas size
+- Buttons to change color mode
+*/
