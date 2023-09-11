@@ -53,13 +53,26 @@ function clearCanvas() {
 
 function setDefaultColor() {
     colorMode = 1
+
+    let defaultColorButton = document.getElementById("default-button")
+    defaultColorButton.classList.add("active")
+
+    let randomColorButton = document.getElementById("random-button")
+    randomColorButton.classList.remove("active")
+    
 }
 
 function setRandomColor() {
     colorMode = 2
+
+    let defaultColorButton = document.getElementById("default-button")
+    defaultColorButton.classList.remove("active")
+
+    let randomColorButton = document.getElementById("random-button")
+    randomColorButton.classList.add("active")
 }
 /*
 TODO:
 - Slider to adjust canvas size
-- Buttons to change color mode
+- Hover effects for buttons
 */

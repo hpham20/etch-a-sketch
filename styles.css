@@ -19,7 +19,30 @@
     height: 100%;
 }
 
+.controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-group {
+    display: flex;
+    justify-content: center;
+}
+
+.input-slider {
+    width: 400px;
+}
+
 .button-group {
     display: flex;
     justify-content: center;
+}
+
+.button {
+    border-radius: 1rem;
+}
+
+.active {
+    border: solid 3px rgb(56, 56, 56);
+    background-color: rgb(180, 246, 255);
 }
