@@ -1,5 +1,5 @@
 const grid = document.querySelector(".grid");
-let gridSize = prompt("How many squares per side? (Maximum: 100)");
+let gridSize = 16;
 let colorMode = 1
 
 createGrid(gridSize);
@@ -71,6 +71,21 @@ function setRandomColor() {
     let randomColorButton = document.getElementById("random-button")
     randomColorButton.classList.add("active")
 }
+
+let canvasSizeInput = document.querySelector("#input_slider")
+let canvasSize_Width = document.querySelector("#canvas_size_width")
+let canvasSize_Height = document.querySelector("#canvas_size_height")
+
+canvasSize_Width.textContent = canvasSizeInput.value
+canvasSize_Height.textContent = canvasSizeInput.value
+
+canvasSizeInput.addEventListener("change", (event) => {
+    createGrid(event.target.value);
+})
+canvasSizeInput.addEventListener("input", (event) => {
+    canvasSize_Width.textContent = event.target.value
+    canvasSize_Height.textContent = event.target.value
+})
 /*
 TODO:
 - Slider to adjust canvas size
